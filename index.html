@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Just Build — Build Your Life Beyond Your Limits</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Outfit:wght@300;400;500;600&family=Caveat:wght@400;700&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="styles/main.css">
+</head>
+
+<body>
+
+  <!-- ── AMBIENT OVERLAY ── -->
+  <div class="ambient-overlay"></div>
+
+  <!-- ── CUSTOM CURSOR ── -->
+  <div id="cursor"></div>
+  <div id="cursor-ring"></div>
+
+  <!-- ── MESH BACKGROUND ── -->
+  <div id="mesh-canvas">
+    <div class="mesh-circle" style="width:600px; height:600px; background:var(--mesh-1); top:-10%; left:-10%;"></div>
+    <div class="mesh-circle" style="width:500px; height:500px; background:var(--mesh-2); bottom:-5%; right:10%;"></div>
+    <div class="mesh-circle" style="width:700px; height:700px; background:var(--mesh-3); top:30%; left:20%;"></div>
+  </div>
+
+  <!-- ── 3D PARALLAX ASSETS ── -->
+  <div class="glass-asset cube" style="top:20%; left:10%;" data-depth="0.05"></div>
+  <div class="glass-asset sphere" style="top:60%; right:5%;" data-depth="0.08"></div>
+
+  <!-- ── NAVIGATION ── -->
+  <nav id="nav">
+    <a href="#" class="nav-logo-group">
+      <img src="logo.jpeg" alt="Just Build Logo" class="nav-icon-logo" />
+      <div class="logo">Just <em>Build</em></div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#why">Why Us</a></li>
+      <li><a href="#faq">FAQ</a></li>
+    </ul>
+    <a href="#contact" class="nav-cta-btn">Start a Project</a>
+  </nav>
+
+  <main>
+    <!-- ── HERO SECTION ── -->
+    <section id="hero">
+      <div class="hero-bg-grid"></div>
+      <div class="hero-orb hero-orb-1"></div>
+      <div class="hero-orb hero-orb-2"></div>
+      <div class="hero-scroll-badge">
+        <span>Scroll</span>
+        <div class="hero-scroll-line"></div>
+      </div>
+      <div class="hero-num">
+        <img src="logo.jpeg" alt="Just Build Background"
+          style="width: 100%; height: 100%; object-fit: contain; opacity: 0.1; filter: grayscale(1) brightness(1.2)" />
+      </div>
+      <div>
+        <div class="hero-tag"><span class="hero-tag-line"></span> Transforming Lives &amp; Businesses</div>
+        <h1 class="hero-title">
+          Build Your Life<br>
+          <em>Beyond</em><br>
+          Your <span id="dynamic-word">Limits.</span>
+        </h1>
+        <div class="hero-bottom">
+          <p class="hero-desc">Empowering students, entrepreneurs, and businesses to achieve extraordinary growth
+            through personalized mentorship and innovative strategies.</p>
+          <div class="hero-cta-group">
+            <a href="#contact" class="btn-hero">Start Your Journey</a>
+            <a href="#services" class="btn-ghost">Explore Services <span class="arrow">→</span></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── MARQUEE BRANDS ── -->
+    <div class="marquee-wrap">
+      <div class="marquee-track">
+        <div class="marquee-item"><span class="marquee-dot"></span>Student Mentorship<span
+            class="marquee-dot"></span>Entrepreneur Growth<span class="marquee-dot"></span>Business Digitalization<span
+            class="marquee-dot"></span>Project Monetization<span class="marquee-dot"></span>Career Guidance<span
+            class="marquee-dot"></span>Business Strategy<span class="marquee-dot"></span>500+ Lives Transformed<span
+            class="marquee-dot"></span>95% Success Rate</div>
+        <div class="marquee-item"><span class="marquee-dot"></span>Student Mentorship<span
+            class="marquee-dot"></span>Entrepreneur Growth<span class="marquee-dot"></span>Business Digitalization<span
+            class="marquee-dot"></span>Project Monetization<span class="marquee-dot"></span>Career Guidance<span
+            class="marquee-dot"></span>Business Strategy<span class="marquee-dot"></span>500+ Lives Transformed<span
+            class="marquee-dot"></span>95% Success Rate</div>
+      </div>
+    </div>
+
+    <!-- ── ABOUT SECTION ── -->
+    <section id="about">
+      <div class="s-inner">
+        <div class="about-layout">
+          <!-- About Left: Content & Growth Visual -->
+          <div class="reveal">
+            <div class="s-label">About Just Build</div>
+            <h2 class="s-title">We don't just<br>mentor. We<br><em>transform.</em></h2>
+            <p class="about-big-text">We are dedicated to transforming lives and businesses through personalized
+              mentorship, innovative strategies, and an unwavering commitment to your success — from the very first
+              session to long after your goals are reached.</p>
+
+            <!-- Repositioned Growth Graph (Moved to left side 'empty space') -->
+            <div class="growth-graph-wrap" style="margin-top: 3rem; border-bottom: none; gap: 20px;">
+              <div class="growth-bar" style="height: 40px; width: 40px;"></div>
+              <div class="growth-bar" style="height: 65px; width: 40px;"></div>
+              <div class="growth-bar" style="height: 85px; width: 40px;"></div>
+              <div class="growth-bar" style="height: 105px; width: 40px;"></div>
+              <div class="growth-bar" style="height: 140px; width: 40px;"></div>
+            </div>
+            <div
+              style="font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-muted); opacity: 0.7;">
+              Projected Value Realization Index</div>
+          </div>
+
+          <!-- About Right: Stats & Founder -->
+          <div class="reveal reveal-delay-2">
+            <div class="about-stat-grid">
+              <div class="about-stat">
+                <div class="about-stat-num"><span class="stat-val" data-target="500">0</span>+</div>
+                <div class="stat-label">Students mentored</div>
+              </div>
+              <div class="about-stat">
+                <div class="about-stat-num"><span class="stat-val" data-target="95">0</span>%</div>
+                <div class="stat-label">Success rate</div>
+              </div>
+              <div class="about-stat">
+                <div class="about-stat-num"><span class="stat-val" data-target="100">0</span>+</div>
+                <div class="stat-label">Businesses transformed</div>
+              </div>
+              <div class="about-stat">
+                <div class="about-stat-num"><span class="stat-val" data-target="4">0</span></div>
+                <div class="stat-label">Core service areas</div>
+              </div>
+            </div>
+
+            <div class="founder-card tilt-card">
+              <div class="founder-top">
+                <div class="founder-initials">SJ</div>
+                <div>
+                  <div class="founder-meta-name">Sanyam Jain</div>
+                  <div class="founder-meta-role">Founder · Growth Strategist</div>
+                </div>
+              </div>
+              <div class="founder-quote">"I started Just Build because I saw too many talented students and
+                entrepreneurs struggle — not from lack of ability, but from lack of the right guidance. My mission is to
+                be the mentor I wish I had."</div>
+              <div class="signature-box">
+                <svg class="signature-svg" viewBox="0 0 200 60">
+                  <text x="10" y="45" class="sig-text">Sanyam Jain</text>
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Core Values -->
+        <div class="values-row reveal">
+          <div class="value-cell">
+            <div class="value-num">01</div>
+            <div class="value-title">Innovation</div>
+            <div class="value-desc">Embracing cutting-edge ideas and strategies to drive real, measurable growth</div>
+          </div>
+          <div class="value-cell">
+            <div class="value-num">02</div>
+            <div class="value-title">Trust</div>
+            <div class="value-desc">Building lasting relationships grounded in honesty, transparency, and integrity
+            </div>
+          </div>
+          <div class="value-cell">
+            <div class="value-num">03</div>
+            <div class="value-title">Excellence</div>
+            <div class="value-desc">Committed to delivering exceptional, results-driven outcomes in everything we do
+            </div>
+          </div>
+          <div class="value-cell">
+            <div class="value-num">04</div>
+            <div class="value-title">Growth</div>
+            <div class="value-desc">Focused on sustainable progress and continuous improvement for every client</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── SERVICES SECTION ── -->
+    <section id="services">
+      <div class="s-inner">
+        <div class="services-header reveal">
+          <div>
+            <div class="s-label">What We Offer</div>
+            <h2 class="s-title">Four ways we<br>help you <em>grow.</em></h2>
+          </div>
+          <p class="s-sub">Comprehensive solutions tailored to your unique journey — whether you're a student, aspiring
+            entrepreneur, or established business owner.</p>
+        </div>
+        <div class="service-list reveal">
+
+          <!-- Service 1 -->
+          <div class="service-item" onclick="toggleService(this)">
+            <div class="service-num">01</div>
+            <div class="service-body">
+              <div class="service-title-row">
+                <span class="service-tag">Students</span>
+              </div>
+              <div class="service-name">Student Mentorship</div>
+              <div class="service-desc">Guiding students through their academic journey to unlock potential and achieve
+                excellence</div>
+            </div>
+            <button class="service-expand">+</button>
+          </div>
+          <div class="service-detail-panel" id="sdp-0">
+            <ul class="sdp-features">
+              <li>One-on-one mentorship sessions</li>
+              <li>Career guidance and planning</li>
+              <li>Skill development workshops</li>
+              <li>Academic excellence strategies</li>
+              <li>Personality development</li>
+              <li>Goal setting and achievement tracking</li>
+            </ul>
+            <div class="sdp-benefits">
+              <div class="sdp-benefits-title">Benefits You'll Gain</div>
+              <div class="sdp-benefit-row">Clear career path visibility</div>
+              <div class="sdp-benefit-row">Enhanced learning strategies</div>
+              <div class="sdp-benefit-row">Improved confidence & communication</div>
+              <div class="sdp-benefit-row">Better academic performance</div>
+            </div>
+          </div>
+          <div class="service-cta-row" id="scr-0" style="display:none">
+            <a href="#contact" class="btn-hero" style="font-size:12px;padding:12px 28px">Start with Student Mentorship
+              →</a>
+          </div>
+
+          <!-- Service 2 -->
+          <div class="service-item" onclick="toggleService(this)">
+            <div class="service-num">02</div>
+            <div class="service-body">
+              <div class="service-title-row"><span class="service-tag">Entrepreneurs</span></div>
+              <div class="service-name">Entrepreneur Growth</div>
+              <div class="service-desc">Transforming ideas into successful businesses with strategy, mentorship, and
+                market intelligence</div>
+            </div>
+            <button class="service-expand">+</button>
+          </div>
+          <div class="service-detail-panel" id="sdp-1">
+            <ul class="sdp-features">
+              <li>Business strategy development</li>
+              <li>Market research and analysis</li>
+              <li>Funding and investment guidance</li>
+              <li>Growth and scaling strategies</li>
+              <li>Networking opportunities</li>
+              <li>Pitch deck preparation</li>
+            </ul>
+            <div class="sdp-benefits">
+              <div class="sdp-benefits-title">Benefits You'll Gain</div>
+              <div class="sdp-benefit-row">Accelerated business growth</div>
+              <div class="sdp-benefit-row">Reduced business risks</div>
+              <div class="sdp-benefit-row">Access to investor networks</div>
+              <div class="sdp-benefit-row">Strategic market positioning</div>
+            </div>
+          </div>
+          <div class="service-cta-row" id="scr-1" style="display:none">
+            <a href="#contact" class="btn-hero" style="font-size:12px;padding:12px 28px">Start with Entrepreneur Growth
+              →</a>
+          </div>
+
+          <!-- Service 3 -->
+          <div class="service-item" onclick="toggleService(this)">
+            <div class="service-num">03</div>
+            <div class="service-body">
+              <div class="service-title-row"><span class="service-tag">Businesses</span></div>
+              <div class="service-name">Business Digitalization</div>
+              <div class="service-desc">Bringing traditional businesses into the digital age for expanded reach and
+                operational excellence</div>
+            </div>
+            <button class="service-expand">+</button>
+          </div>
+          <div class="service-detail-panel" id="sdp-2">
+            <ul class="sdp-features">
+              <li>Digital transformation roadmap</li>
+              <li>Online presence establishment</li>
+              <li>E-commerce setup and optimization</li>
+              <li>Digital marketing strategies</li>
+              <li>Process automation</li>
+              <li>Technology integration</li>
+            </ul>
+            <div class="sdp-benefits">
+              <div class="sdp-benefits-title">Benefits You'll Gain</div>
+              <div class="sdp-benefit-row">Expanded market reach</div>
+              <div class="sdp-benefit-row">Increased operational efficiency</div>
+              <div class="sdp-benefit-row">Enhanced customer engagement</div>
+              <div class="sdp-benefit-row">Competitive digital advantage</div>
+            </div>
+          </div>
+          <div class="service-cta-row" id="scr-2" style="display:none">
+            <a href="#contact" class="btn-hero" style="font-size:12px;padding:12px 28px">Start with Business
+              Digitalization →</a>
+          </div>
+
+          <!-- Service 4 -->
+          <div class="service-item" onclick="toggleService(this)">
+            <div class="service-num">04</div>
+            <div class="service-body">
+              <div class="service-title-row"><span class="service-tag">Professionals</span></div>
+              <div class="service-name">Project Monetization</div>
+              <div class="service-desc">Turning your skills, projects, and ideas into sustainable income streams and
+                financial independence</div>
+            </div>
+            <button class="service-expand">+</button>
+          </div>
+          <div class="service-detail-panel" id="sdp-3">
+            <ul class="sdp-features">
+              <li>Monetization strategy development</li>
+              <li>Freelancing and gig economy guidance</li>
+              <li>Product/service pricing strategies</li>
+              <li>Platform selection and optimization</li>
+              <li>Client acquisition techniques</li>
+              <li>Portfolio building</li>
+            </ul>
+            <div class="sdp-benefits">
+              <div class="sdp-benefits-title">Benefits You'll Gain</div>
+              <div class="sdp-benefit-row">Multiple income streams</div>
+              <div class="sdp-benefit-row">Financial independence</div>
+              <div class="sdp-benefit-row">Skill-based earning opportunities</div>
+              <div class="sdp-benefit-row">Sustainable revenue generation</div>
+            </div>
+          </div>
+          <div class="service-cta-row" id="scr-3" style="display:none">
+            <a href="#contact" class="btn-hero" style="font-size:12px;padding:12px 28px">Start with Project Monetization
+              →</a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ── WHY CHOOSE US SECTION ── -->
+    <section id="why">
+      <div class="s-inner">
+        <div class="why-layout">
+          <div class="why-image-frame reveal tilt-card">
+            <div class="why-image-inner" style="background:#f1f5f9">
+              <img src="mentorship.png" alt="Premium Mentorship"
+                style="width:100%; height:100%; object-fit:cover; opacity:0.9" />
+              <div
+                style="position:absolute; inset:0; background:linear-gradient(to top, rgba(255,255,255,0.4), transparent)">
+              </div>
+            </div>
+            <div class="why-badge">
+              <div class="why-badge-num">95%</div>
+              <div class="why-badge-label">Client success rate</div>
+            </div>
+          </div>
+          <div class="why-right reveal reveal-delay-2">
+            <div class="s-label">Why Choose Us</div>
+            <h2 class="s-title">What sets us<br><em>apart.</em></h2>
+            <p class="s-sub" style="margin-bottom:2.5rem">We combine deeply personalized attention with proven
+              frameworks to deliver measurable results — not just inspiration.</p>
+
+            <div class="roadmap reveal">
+              <div class="roadmap-step">
+                <div class="rs-num">01</div>
+                <div class="why-row-title">Deep Discovery</div>
+                <div class="why-row-desc">We dive deep into your current challenges and future ambitions.</div>
+              </div>
+              <div class="roadmap-step">
+                <div class="rs-num">02</div>
+                <div class="why-row-title">Strategic Roadmap</div>
+                <div class="why-row-desc">Crafting a bespoke execution plan based on market reality.</div>
+              </div>
+              <div class="roadmap-step">
+                <div class="rs-num">03</div>
+                <div class="why-row-title">Actionable Growth</div>
+                <div class="why-row-desc">Executing the plan with one-on-one professional guidance.</div>
+              </div>
+              <div class="roadmap-step">
+                <div class="rs-num">04</div>
+                <div class="why-row-title">Sustainable Success</div>
+                <div class="why-row-desc">Securing long-term results and financial independence.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+    </section>
+
+    <!-- ── TESTIMONIALS SECTION ── -->
+    <section id="testimonials">
+      <div class="s-inner">
+        <div class="testi-header reveal">
+          <div>
+            <div class="s-label">Success Stories</div>
+            <h2 class="s-title">Real results.<br><em>Real people.</em></h2>
+          </div>
+          <p class="s-sub">From students landing dream internships to entrepreneurs hitting ₹2L monthly revenue — here's
+            what our clients say.</p>
+        </div>
+
+        <div class="testi-track-wrap reveal">
+          <div class="testi-track">
+            <!-- Original cards -->
+            <div class="testi-card">
+              <div class="testi-service-badge">Student</div>
+              <div class="stars">★★★★★</div>
+              <div class="testi-quote-mark">"</div>
+              <div class="testi-text">Just Build completely changed my career trajectory. Within 3 months, I had a clear
+                roadmap and landed my dream internship.</div>
+              <div class="testi-divider"></div>
+              <div class="testi-author-name">Rahul Kumar</div>
+              <div class="testi-author-role">Engineering Student</div>
+            </div>
+            <div class="testi-card">
+              <div class="testi-service-badge">Entrepreneur</div>
+              <div class="stars">★★★★★</div>
+              <div class="testi-quote-mark">"</div>
+              <div class="testi-text">I came with just an idea and left with a business plan and my first client. My
+                startup now generates ₹2L monthly revenue.</div>
+              <div class="testi-divider"></div>
+              <div class="testi-author-name">Priya Sharma</div>
+              <div class="testi-author-role">Founder, EduTech</div>
+            </div>
+            <div class="testi-card">
+              <div class="testi-service-badge">Business</div>
+              <div class="stars">★★★★★</div>
+              <div class="testi-quote-mark">"</div>
+              <div class="testi-text">Our family business was 100% offline. In 4 months, Just Build helped us build an
+                online store. Sales increased by 60%.</div>
+              <div class="testi-divider"></div>
+              <div class="testi-author-name">Mohan Gupta</div>
+              <div class="testi-author-role">Business Owner</div>
+            </div>
+            <!-- Cloned cards for infinite loop -->
+            <div class="testi-card">
+              <div class="testi-service-badge">Student</div>
+              <div class="stars">★★★★★</div>
+              <div class="testi-quote-mark">"</div>
+              <div class="testi-text">Just Build completely changed my career trajectory. Within 3 months, I had a clear
+                roadmap and landed my dream internship.</div>
+              <div class="testi-divider"></div>
+              <div class="testi-author-name">Rahul Kumar</div>
+              <div class="testi-author-role">Engineering Student</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── FAQ SECTION ── -->
+    <section id="faq">
+      <div class="s-inner">
+        <div class="faq-layout">
+          <div class="faq-left reveal">
+            <div class="s-label">Common Questions</div>
+            <h2 class="s-title">Expertise<br><em>explained.</em></h2>
+            <p class="s-sub">Everything you need to know about how our mentorship and scaling services work.</p>
+            <div class="faq-contact-card">
+              <div class="fcc-label">Still have questions?</div>
+              <a href="mailto:founder@justbuild.com" class="fcc-email">founder@justbuild.com</a>
+              <a href="tel:+917505289490" class="fcc-phone">+91 7505289490</a>
+            </div>
+          </div>
+          <div class="faq-list reveal reveal-delay-2">
+            <div class="faq-item">
+              <button class="faq-btn" onclick="toggleFAQ(this)">
+                What specific services do you offer?
+                <span class="faq-icon">+</span>
+              </button>
+              <div class="faq-answer">
+                <div class="faq-answer-inner">We offer Student Mentorship (for career and academic growth), Entrepreneur
+                  Growth (for startup strategy and scaling), Business Digitalization (for moving offline businesses
+                  online), and Project Monetization (for earning from your existing skills).</div>
+              </div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-btn" onclick="toggleFAQ(this)">
+                How does the mentorship program work?
+                <span class="faq-icon">+</span>
+              </button>
+              <div class="faq-answer">
+                <div class="faq-answer-inner">We start with a free 30-minute discovery call to understand your goals and
+                  challenges. From there, we create a personalized roadmap and schedule regular one-on-one sessions
+                  (weekly or bi-weekly).</div>
+              </div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-btn" onclick="toggleFAQ(this)">
+                What makes Just Build different?
+                <span class="faq-icon">+</span>
+              </button>
+              <div class="faq-answer">
+                <div class="faq-answer-inner">Unlike generic consulting firms, we offer deeply personalized mentorship —
+                  not one-size-fits-all advice. Our mentor has direct entrepreneurial experience and understands the
+                  Indian market context.</div>
+              </div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-btn" onclick="toggleFAQ(this)">
+                How long does it take to see results?
+                <span class="faq-icon">+</span>
+              </button>
+              <div class="faq-answer">
+                <div class="faq-answer-inner">Most students see clarity and direction within 2–4 weeks. Entrepreneurs
+                  typically see tangible progress (business plan, first client, or funding inquiry) within 6–12 weeks.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── CONTACT SECTION ── -->
+    <section id="contact">
+      <div class="s-inner">
+        <div class="contact-layout">
+          <div class="reveal">
+            <div class="s-label">Let's Connect</div>
+            <h2 class="s-title" style="margin-bottom:2rem">Let's make your<br><em>vision real.</em></h2>
+            <div class="contact-info-list">
+              <a href="tel:+917505289490" class="contact-info-row">
+                <div class="cir-icon">📞</div>
+                <div>
+                  <div class="cir-label">Phone</div>
+                  <div class="cir-val">+91 7505289490</div>
+                </div>
+              </a>
+              <a href="mailto:founder@justbuild.com" class="contact-info-row">
+                <div class="cir-icon">✉️</div>
+                <div>
+                  <div class="cir-label">Email</div>
+                  <div class="cir-val">founder@justbuild.com</div>
+                </div>
+              </a>
+            </div>
+            <div class="social-row">
+              <a href="#" class="social-btn" title="Instagram">📸</a>
+              <a href="#" class="social-btn" title="LinkedIn">💼</a>
+              <a href="#" class="social-btn" title="YouTube">▶️</a>
+              <a href="#" class="social-btn" title="WhatsApp">💬</a>
+            </div>
+          </div>
+          <div class="reveal reveal-delay-2">
+            <div class="form-wrap">
+              <div class="form-title">Start the conversation</div>
+              <form id="contact-form" onsubmit="submitForm(event)">
+                <div class="form-row2">
+                  <div class="fg">
+                    <label class="fl">Full Name <span>*</span></label>
+                    <input class="fi" type="text" placeholder="Your full name" required />
+                  </div>
+                  <div class="fg">
+                    <label class="fl">Phone <span>*</span></label>
+                    <input class="fi" type="tel" placeholder="+91 XXXXX XXXXX" required />
+                  </div>
+                </div>
+                <div class="fg">
+                  <label class="fl">Email Address <span>*</span></label>
+                  <input class="fi" type="email" placeholder="your@email.com" required />
+                </div>
+                <div class="fg">
+                  <label class="fl">Service Interested In <span>*</span></label>
+                  <select class="fs fi" required>
+                    <option value="">Select a service</option>
+                    <option>Student Mentorship</option>
+                    <option>Entrepreneur Growth</option>
+                    <option>Business Digitalization</option>
+                    <option>Project Monetization</option>
+                  </select>
+                </div>
+                <div class="fg">
+                  <label class="fl">Your Message</label>
+                  <textarea class="ft" placeholder="How can we help you scale?"></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Send Message <span class="arrow">→</span></button>
+              </form>
+              <div id="form-success" class="form-success-state">
+                <div class="fss-icon">✨</div>
+                <div class="fss-title">Inquiry Sent</div>
+                <div class="fss-sub">Thank you for reaching out. We'll be in touch within 24 hours.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── FOOTER SECTION ── -->
+    <footer id="footer">
+      <div class="footer-inner">
+        <div class="footer-top">
+          <div>
+            <div class="nav-logo-group" style="margin-bottom:20px">
+              <img src="logo.jpeg" alt="Just Build Logo" style="width:36px;height:36px;border-radius:4px" />
+              <div class="footer-brand-name" style="margin-bottom:0">Just <em>Build</em></div>
+            </div>
+            <div class="footer-desc">Empowering students, entrepreneurs, and businesses to achieve extraordinary growth
+              through personalized mentorship.</div>
+          </div>
+          <div>
+            <div class="footer-col-title">Navigation</div>
+            <ul class="footer-links">
+              <li><a href="#hero">Home</a></li>
+              <li><a href="#about">About</a></li>
+              <li><a href="#services">Services</a></li>
+              <li><a href="#testimonials">Reviews</a></li>
+              <li><a href="#faq">FAQ</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+          </div>
+          <div>
+            <div class="footer-col-title">Connect</div>
+            <ul class="footer-links">
+              <li><a href="mailto:founder@justbuild.com">Email Us</a></li>
+              <li><a href="tel:+917505289490">Call Us</a></li>
+              <li><a href="#">LinkedIn</a></li>
+              <li><a href="#">Instagram</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <div class="footer-copy">© 2026 Just Build. All rights reserved.</div>
+          <button class="back-top" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑ Back to Top</button>
+        </div>
+      </div>
+    </footer>
+  </main>
+
+  <!-- ── WHATSAPP BUTTON ── -->
+  <a href="https://wa.me/917505289490" class="wa-float" target="_blank">
+    <div class="wa-pulse"></div>
+    💬
+  </a>
+
+  <script src="scripts/main.js"></script>
+</body>
+
+</html>
