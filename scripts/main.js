@@ -2,12 +2,20 @@
  * JUST BUILD 2.0 - Cinematic Interaction Engine
  */
 
-// 1. SMOOTH SCROLLING (LENIS)
+const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+
+// 1. SMOOTH SCROLLING & PROGRESS
 function initSmoothScroll() {
   const lenis = new Lenis({
-    duration: 1.2,
+    duration: isTouchDevice ? 1.0 : 1.2,
     easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
     smoothWheel: true,
+  });
+
+  const progressBar = document.querySelector('.scroll-progress');
+  lenis.on('scroll', (e) => {
+    const progress = (e.animatedScroll / (document.body.scrollHeight - window.innerHeight)) * 100;
+    if (progressBar) progressBar.style.width = `${progress}%`;
   });
 
   function raf(time) {
@@ -17,45 +25,57 @@ function initSmoothScroll() {
   requestAnimationFrame(raf);
 }
 
-// 2. CINEMATIC CURSOR SYSTEM
-function initCustomCursor() {
-  const cursor = document.createElement('div');
-  cursor.id = 'custom-cursor';
-  const follower = document.createElement('div');
-  follower.id = 'cursor-follower';
-  document.body.appendChild(cursor);
-  document.body.appendChild(follower);
-
-  let mouseX = 0, mouseY = 0;
-
-  window.addEventListener('mousemove', (e) => {
-    mouseX = e.clientX;
-    mouseY = e.clientY;
-    
-    cursor.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0)`;
-    
-    follower.animate({
-      transform: `translate3d(${mouseX}px, ${mouseY}px, 0)`
-    }, { duration: 500, fill: "forwards" });
-  });
-
-  const magnetics = document.querySelectorAll('.btn-executive, .nav-cta, .ex-card, .s-card, .value-node, .why-item');
-  magnetics.forEach(el => {
+// 2. MAGNETIC INTERACTION
+function initMagnetics() {
+  if (isTouchDevice) return;
+  const elements = document.querySelectorAll('.btn-executive, .nav-cta, .btn-ghost');
+  elements.forEach(el => {
     el.addEventListener('mousemove', (e) => {
       const bound = el.getBoundingClientRect();
       const x = e.clientX - bound.left - bound.width / 2;
       const y = e.clientY - bound.top - bound.height / 2;
-      el.style.transform = `translate3d(${x * 0.15}px, ${y * 0.15}px, 0) scale(1.02)`;
+      el.style.transform = `translate(${x * 0.3}px, ${y * 0.3}px)`;
     });
     el.addEventListener('mouseleave', () => {
-      el.style.transform = `translate3d(0, 0, 0) scale(1)`;
+      el.style.transform = `translate(0, 0)`;
     });
   });
+}
 
-  const interactive = 'a, button, .ex-card, .s-card, .faq-node, input, textarea, select';
-  document.querySelectorAll(interactive).forEach(el => {
-    el.addEventListener('mouseenter', () => document.body.classList.add('cursor-hover'));
-    el.addEventListener('mouseleave', () => document.body.classList.remove('cursor-hover'));
+// 3. IMAGE PARALLAX
+function initImageParallax() {
+  window.addEventListener('scroll', () => {
+    const depth = 0.05;
+    const move = window.scrollY * depth;
+    const logo = document.getElementById('main-logo');
+    if (logo) logo.style.transform = `translateY(${move}px)`;
+  });
+}
+
+// 2. PARALLAX TILT EFFECT
+function initTiltEffect() {
+  const cards = document.querySelectorAll('.ex-card, .s-card, .value-node, .why-item');
+  cards.forEach(card => {
+    card.addEventListener('mousemove', (e) => {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      const xc = rect.width / 2;
+      const yc = rect.height / 2;
+      const dx = x - xc;
+      const dy = y - yc;
+      card.style.transform = `perspective(1000px) rotateY(${dx / 20}deg) rotateX(${-dy / 20}deg) translateY(-15px) scale(1.02)`;
+      
+      // Update radial glow position
+      const glow = card.querySelector('::before'); // Not accessible via JS directly
+      // Instead, we can use a custom property for the radial gradient center
+      card.style.setProperty('--mx', `${(x / rect.width) * 100}%`);
+      card.style.setProperty('--my', `${(y / rect.height) * 100}%`);
+    });
+    
+    card.addEventListener('mouseleave', () => {
+      card.style.transform = `perspective(1000px) rotateY(0deg) rotateX(0deg) translateY(0) scale(1)`;
+    });
   });
 }
 
@@ -147,7 +167,7 @@ function initMobileMenu() {
 
 // 5. TYPEWRITER & REVEAL
 function initTypewriter() {
-  const words = ["Potential", "Founders", "Success", "Digital World"];
+  const words = ["limits", "boundaries", "fears", "expectations", "imagination"];
   let i = 0, j = 0, current = "", isDeleting = false;
   const target = document.getElementById('typewriter');
   if (!target) return;
@@ -193,7 +213,9 @@ document.addEventListener('DOMContentLoaded', () => {
   initPreloader();
   initMobileMenu();
   initSmoothScroll();
-  initCustomCursor();
+  initMagnetics();
+  initImageParallax();
+  initTiltEffect();
   initNeuralBackground();
   initTypewriter();
   initScrollReveal();
