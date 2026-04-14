@@ -141,16 +141,7 @@ function initNeuralBackground() {
   animate();
 }
 
-// 4. PRELOADER & MOBILE MENU
-function initPreloader() {
-  const preloader = document.getElementById('preloader');
-  window.addEventListener('load', () => {
-    setTimeout(() => {
-      preloader.classList.add('fade-out');
-    }, 1500);
-  });
-}
-
+// 4. MOBILE MENU
 function initMobileMenu() {
   const toggle = document.querySelector('.menu-toggle');
   const menu = document.getElementById('mobile-menu');
@@ -210,7 +201,6 @@ window.addEventListener('scroll', () => {
 
 // INITIALIZE ALL
 document.addEventListener('DOMContentLoaded', () => {
-  initPreloader();
   initMobileMenu();
   initSmoothScroll();
   initMagnetics();
