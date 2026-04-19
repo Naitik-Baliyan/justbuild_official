@@ -31,8 +31,11 @@
     <div class="aurora-blobs">
       <div class="blob b-blue"></div>
       <div class="blob b-purple"></div>
-      <div class="blob b-pink"></div>
+      <div class="blob b-lavender"></div>
+      <div class="blob b-green"></div>
+      <div class="blob b-orange"></div>
     </div>
+    <div class="noise-vignette"></div>
     <canvas id="neural-canvas-light"></canvas>
   </div>
 
@@ -40,7 +43,7 @@
     <div class="scroll-progress"></div>
     <div class="nav-container">
       <div class="nav-logo">
-        <span>Just Build</span>
+        <a href="#" class="logo">Just Build</a>
       </div>
       <ul class="nav-links">
         <li><a href="#about">Philosophy</a></li>
@@ -63,7 +66,7 @@
           <div class="hero-logo-side">
             <div class="glass-frame">
               <div class="logo-wrap-light">
-                <img src="logo.jpeg" alt="Just Build Logo" id="main-logo" />
+                <img src="LOGOFINAL.jpeg" alt="Just Build Logo" id="main-logo" />
               </div>
               <div class="frame-decor top-left"></div>
               <div class="frame-decor bottom-right"></div>
@@ -73,9 +76,9 @@
             <div class="hero-message">
               <span class="m-pre">Architecture of Growth</span>
               <h1 class="m-title">
-                Your life <br>
-                beyond your <br>
-                <span id="typewriter" class="grad-premium">limits</span>
+                Just Build Your Life <br>
+                Beyond Your <br>
+                <span id="typewriter" class="grad-premium">Limits</span>
               </h1>
               <div class="m-divider"></div>
               <p class="m-sub">We bridge the gap between ambitious potential and radical reality through elite mentorship and architectural digitalization. Join the non-linear growth revolution.</p>
@@ -93,21 +96,26 @@
 
     <!-- ── 02. PHILOSOPHY ── -->
     <section id="about" class="layout-stack reveal-on-scroll">
-      <div class="container">
-        <div class="grid-2 gap-40">
-          <div>
-            <h2 class="sect-title">Philosophy of <em>Growth</em></h2>
-            <p class="sect-p">We are dedicated to transforming lives and businesses through personalized mentorship, innovative strategies, and unwavering commitment to your success.</p>
+      <div class="container align-center">
+        <h2 class="sect-title">Philosophy of <em>Growth</em></h2>
+        
+        <div class="philosophy-header-wrap">
+          <details class="philosophy-dropdown">
+            <summary class="dropdown-trigger">The Just Build Essence <span class="arrow">↓</span></summary>
+            <div class="dropdown-content">
+              <p class="sect-p m-auto">We are dedicated to transforming lives and businesses through personalized mentorship, innovative strategies, and unwavering commitment to your success.</p>
+            </div>
+          </details>
+        </div>
+
+        <div class="mv-grid reveal-on-scroll">
+          <div class="ex-card mv-card blue">
+            <h3 class="mv-title">Our Mission</h3>
+            <p>To empower individuals to achieve extraordinary growth by breaking traditional boundaries.</p>
           </div>
-          <div class="grid-2 gap-20">
-            <div class="ex-card reveal-on-scroll">
-              <h3>Our Mission</h3>
-              <p>To empower individuals to achieve extraordinary growth by breaking traditional boundaries.</p>
-            </div>
-            <div class="ex-card reveal-on-scroll">
-              <h3>Our Vision</h3>
-              <p>Creating a world where every student and entrepreneur thrives in the digital age.</p>
-            </div>
+          <div class="ex-card mv-card green">
+            <h3 class="mv-title">Our Vision</h3>
+            <p>Creating a world where every student and entrepreneur thrives in the digital age.</p>
           </div>
         </div>
       </div>
@@ -119,23 +127,23 @@
         <div class="align-center mb-20">
           <h2 class="sect-title">The <em>Core</em> Foundations</h2>
         </div>
-        <div class="grid-4 gap-30">
-          <div class="value-node reveal-on-scroll">
+        <div class="grid-2 gap-30">
+          <div class="value-node v-blue reveal-on-scroll">
             <div class="v-icon">💡</div>
             <h4>Innovation</h4>
             <p>Creative approaches to drive results.</p>
           </div>
-          <div class="value-node reveal-on-scroll">
+          <div class="value-node v-purple reveal-on-scroll">
             <div class="v-icon">🤝</div>
             <h4>Trust</h4>
             <p>Honest and transparent relationships.</p>
           </div>
-          <div class="value-node reveal-on-scroll">
+          <div class="value-node v-green reveal-on-scroll">
             <div class="v-icon">💎</div>
             <h4>Excellence</h4>
             <p>Exceptional results in everything.</p>
           </div>
-          <div class="value-node reveal-on-scroll">
+          <div class="value-node v-orange reveal-on-scroll">
             <div class="v-icon">📈</div>
             <h4>Progression</h4>
             <p>Continuous building and improvement.</p>
@@ -165,28 +173,28 @@
           <p class="sect-p m-auto">Tailored roadmaps for various stages of growth.</p>
         </div>
         <div class="service-block">
-          <div class="s-card reveal-on-scroll">
+          <div class="s-card blue reveal-on-scroll">
             <div>
               <h3>Student Mentorship</h3>
               <p>Guiding academic personal development and career clarity.</p>
             </div>
             <a href="#contact" class="btn-micro">Architect Growth →</a>
           </div>
-          <div class="s-card reveal-on-scroll">
+          <div class="s-card purple reveal-on-scroll">
             <div>
               <h3>Founder Growth</h3>
               <p>Scaling small ventures with marketing and elite execution.</p>
             </div>
             <a href="#contact" class="btn-micro">Scale Venture →</a>
           </div>
-          <div class="s-card reveal-on-scroll">
+          <div class="s-card green reveal-on-scroll">
             <div>
               <h3>Business Digitalization</h3>
               <p>Transforming traditional assets into digital-first systems.</p>
             </div>
             <a href="#contact" class="btn-micro">Go Digital →</a>
           </div>
-          <div class="s-card reveal-on-scroll">
+          <div class="s-card orange reveal-on-scroll">
             <div>
               <h3>Project Monetization</h3>
               <p>Turning creative ideas into high-yield revenue streams.</p>

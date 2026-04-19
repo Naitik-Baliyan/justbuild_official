@@ -110,7 +110,7 @@ function initNeuralBackground() {
     draw() {
       ctx.beginPath();
       ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
-      ctx.fillStyle = 'rgba(59, 130, 246, 0.2)';
+      ctx.fillStyle = this.radius > 1.8 ? 'rgba(196, 181, 253, 0.6)' : 'rgba(59, 130, 246, 0.4)';
       ctx.fill();
     }
   }
@@ -126,10 +126,11 @@ function initNeuralBackground() {
         const dx = p.x - particles[j].x;
         const dy = p.y - particles[j].y;
         const dist = Math.sqrt(dx * dx + dy * dy);
-        if (dist < 150) {
+        if (dist < 180) {
           ctx.beginPath();
-          ctx.strokeStyle = `rgba(59, 130, 246, ${0.15 * (1 - dist / 150)})`;
-          ctx.lineWidth = 0.8;
+          const color = dist < 100 ? '196, 181, 253' : '59, 130, 246';
+          ctx.strokeStyle = `rgba(${color}, ${0.5 * (1 - dist / 180)})`;
+          ctx.lineWidth = 1.2;
           ctx.moveTo(p.x, p.y);
           ctx.lineTo(particles[j].x, particles[j].y);
           ctx.stroke();
@@ -158,21 +159,44 @@ function initMobileMenu() {
 
 // 5. TYPEWRITER & REVEAL
 function initTypewriter() {
-  const words = ["limits", "boundaries", "fears", "expectations", "imagination"];
+  const words = [
+    { text: "Limits", color: "#3b82f6" },
+    { text: "Boundaries", color: "#8b5cf6" },
+    { text: "Fears", color: "#10b981" },
+    { text: "Expectations", color: "#f59e0b" },
+    { text: "Imagination", color: "#3b82f6" }
+  ];
   let i = 0, j = 0, current = "", isDeleting = false;
   const target = document.getElementById('typewriter');
   if (!target) return;
 
+  // Clear initial HTML text to prevent "pop"
+  target.textContent = "";
+
   function type() {
-    const full = words[i % words.length];
+    const full = words[i % words.length].text;
+    const color = words[i % words.length].color;
+    
+    target.style.color = color;
+    target.style.webkitTextFillColor = color;
+
     current = isDeleting ? full.substring(0, j--) : full.substring(0, j++);
     target.textContent = current;
-    let speed = isDeleting ? 50 : 150;
-    if (!isDeleting && current === full) { speed = 2000; isDeleting = true; }
-    else if (isDeleting && current === "") { isDeleting = false; i++; speed = 500; }
+    
+    let speed = isDeleting ? 70 : 120; // Slightly faster typing for realism
+    
+    if (!isDeleting && current === full) {
+      speed = 2500; // Pause at end
+      isDeleting = true;
+    } else if (isDeleting && current === "") {
+      isDeleting = false;
+      i++;
+      speed = 200; // Shorter pause before next word starts typing
+    }
+    
     setTimeout(type, speed);
   }
-  type();
+  setTimeout(type, 100); // Start immediately
 }
 
 function initScrollReveal() {
